@@ -58,9 +58,8 @@ class CircleViewController: UIViewController  {
         switch longPress.state {
         case .began:
             // FadeOut and resize the view
-            // Set startingTouchPoint - so it does not 'blink' later
-           grabOffset[circleView] = CGVector(dx: touchPoint.x - circleView.center.x, dy: touchPoint.y - circleView.center.y)
-            
+            // Set grabOffset - so it does not 'blink' later
+            grabOffset[circleView] = CGVector(dx: touchPoint.x - circleView.center.x, dy: touchPoint.y - circleView.center.y)
             let animator = UIViewPropertyAnimator(duration: 0.2, curve: .easeIn, animations: { [weak self] in
                 self?.view.bringSubview(toFront: circleView)
                 circleView.alpha = 0.7
