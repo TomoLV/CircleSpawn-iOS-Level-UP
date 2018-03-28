@@ -77,6 +77,7 @@ class CircleViewController: UIViewController  {
                 circleView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             })
             animator.startAnimation()
+            grabOffset[circleView] = nil
         default:
             break
         }
@@ -92,6 +93,7 @@ class CircleViewController: UIViewController  {
                 if position == .end { circleView.removeFromSuperview() }
             }
             animator.startAnimation()
+            grabOffset.removeValue(forKey: circleView)
         }
         
     }
